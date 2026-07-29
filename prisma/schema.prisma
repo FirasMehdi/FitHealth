@@ -1,0 +1,182 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  CLIENT
+}
+
+enum Goal {
+  MAINTAIN
+  LOSS
+  GAIN
+}
+
+enum ActivityLevel {
+  SEDENTARY
+  LIGHT
+  MODERATE
+  ACTIVE
+  VERY_ACTIVE
+}
+
+enum MealType {
+  BREAKFAST
+  LUNCH
+  DINNER
+  SNACK
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  role      Role     @default(CLIENT)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  clientProfile    ClientProfile?
+  sentMessages     Message[] @relation("SentMessages")
+  receivedMessages Message[] @relation("ReceivedMessages")
+}
+
+model ClientProfile {
+  id            String        @id @default(cuid())
+  userId        String        @unique
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fullName      String
+  dateOfBirth   DateTime
+  placeOfBirth  String
+  phone         String
+  weight        Float
+  height        Float
+  goal          Goal
+  activityLevel ActivityLevel
+
+  workoutAssignments WorkoutAssignment[]
+  dietAssignments    DietAssignment[]
+}
+
+model Exercise {
+  id            String   @id @default(cuid())
+  nameEn        String
+  nameFr        String
+  nameAr        String
+  descriptionEn String?
+  descriptionFr String?
+  descriptionAr String?
+  muscleGroup   String
+  createdAt     DateTime @default(now())
+
+  workoutExercises WorkoutExercise[]
+}
+
+model WorkoutProgram {
+  id            String   @id @default(cuid())
+  nameEn        String
+  nameFr        String
+  nameAr        String
+  descriptionEn String?
+  descriptionFr String?
+  descriptionAr String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  exercises   WorkoutExercise[]
+  assignments WorkoutAssignment[]
+}
+
+model WorkoutExercise {
+  id          String @id @default(cuid())
+  programId   String
+  exerciseId  String
+  sets        Int
+  reps        String
+  restSeconds Int?
+  order       Int
+
+  program  WorkoutProgram @relation(fields: [programId], references: [id], onDelete: Cascade)
+  exercise Exercise       @relation(fields: [exerciseId], references: [id])
+}
+
+model WorkoutAssignment {
+  id         String   @id @default(cuid())
+  clientId   String
+  programId  String
+  assignedAt DateTime @default(now())
+
+  client  ClientProfile  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  program WorkoutProgram @relation(fields: [programId], references: [id])
+
+  @@unique([clientId, programId])
+}
+
+model Ingredient {
+  id     String @id @default(cuid())
+  nameEn String
+  nameFr String
+  nameAr String
+  calories Float
+  protein  Float
+  carbs    Float
+  fat      Float
+  unit     String
+
+  dietIngredients DietIngredient[]
+}
+
+model DietPlan {
+  id            String   @id @default(cuid())
+  nameEn        String
+  nameFr        String
+  nameAr        String
+  descriptionEn String?
+  descriptionFr String?
+  descriptionAr String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  ingredients DietIngredient[]
+  assignments DietAssignment[]
+}
+
+model DietIngredient {
+  id           String   @id @default(cuid())
+  dietPlanId   String
+  ingredientId String
+  quantity     Float
+  mealType     MealType
+
+  dietPlan   DietPlan   @relation(fields: [dietPlanId], references: [id], onDelete: Cascade)
+  ingredient Ingredient @relation(fields: [ingredientId], references: [id])
+}
+
+model DietAssignment {
+  id         String   @id @default(cuid())
+  clientId   String
+  dietPlanId String
+  assignedAt DateTime @default(now())
+
+  client   ClientProfile @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  dietPlan DietPlan      @relation(fields: [dietPlanId], references: [id])
+
+  @@unique([clientId, dietPlanId])
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  senderId   String
+  receiverId String
+  content    String
+  read       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  sender   User @relation("SentMessages", fields: [senderId], references: [id])
+  receiver User @relation("ReceivedMessages", fields: [receiverId], references: [id])
+}

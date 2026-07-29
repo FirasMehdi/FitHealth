@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Sign In",
+    "signup": "Sign Up",
+    "dashboard": "Dashboard",
+    "logout": "Sign Out"
+  },
+  "hero": {
+    "badge": "Private Coaching · Tunisia",
+    "title": "Transform your body with",
+    "coach": "Zou the Doctor",
+    "subtitle": "Personalized training and nutrition programs designed for your goals. Science-backed coaching in a premium, minimalist experience.",
+    "ctaPrimary": "Start Your Journey",
+    "ctaSecondary": "View Offers"
+  },
+  "offers": {
+    "title": "Private Training Offers",
+    "subtitle": "Choose the plan that fits your lifestyle. All prices in Tunisian Dinar (TND).",
+    "monthly": "Monthly",
+    "popular": "Most Popular",
+    "starter": {
+      "name": "Starter",
+      "price": "199",
+      "period": "TND / month",
+      "features": ["Custom workout program", "Basic diet guidance", "Monthly check-in", "Email support"]
+    },
+    "premium": {
+      "name": "Premium",
+      "price": "349",
+      "period": "TND / month",
+      "features": ["Full workout & diet plans", "Weekly progress review", "Direct messaging", "Program adjustments"]
+    },
+    "elite": {
+      "name": "Elite",
+      "price": "549",
+      "period": "TND / month",
+      "features": ["1-on-1 coaching priority", "Daily messaging access", "Advanced nutrition plan", "Video form checks"]
+    }
+  },
+  "about": {
+    "title": "About Zou the Doctor",
+    "subtitle": "Your partner in health, strength, and longevity.",
+    "bio1": "Zou the Doctor is a certified fitness coach based in Tunisia, dedicated to helping clients achieve sustainable results through personalized training and evidence-based nutrition.",
+    "bio2": "With years of experience in body transformation, Zou combines medical knowledge with practical coaching to create programs that fit your body, schedule, and goals.",
+    "valuesTitle": "Our Values",
+    "value1Title": "Personalization",
+    "value1Desc": "Every program is tailored to your body metrics, goals, and activity level.",
+    "value2Title": "Science",
+    "value2Desc": "Training and nutrition built on proven principles, not trends.",
+    "value3Title": "Accountability",
+    "value3Desc": "Regular check-ins and direct messaging keep you on track."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to start? Reach out and we'll get back to you within 24 hours.",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Thank you! Your message has been sent.",
+    "location": "Tunis, Tunisia",
+    "hours": "Mon – Sat, 8:00 – 20:00"
+  },
+  "auth": {
+    "loginTitle": "Sign In",
+    "signupTitle": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "loginButton": "Sign In",
+    "signupButton": "Create Account",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "fullName": "Full Name",
+    "dateOfBirth": "Date of Birth",
+    "placeOfBirth": "Place of Birth",
+    "phone": "Phone Number",
+    "weight": "Current Weight (kg)",
+    "height": "Current Height (cm)",
+    "goal": "Goal",
+    "activityLevel": "Activity Level",
+    "goals": {
+      "MAINTAIN": "Maintain weight",
+      "LOSS": "Weight loss",
+      "GAIN": "Weight gain"
+    },
+    "activityLevels": {
+      "SEDENTARY": "Sedentary (little or no exercise)",
+      "LIGHT": "Light (1–3 days/week)",
+      "MODERATE": "Moderate (3–5 days/week)",
+      "ACTIVE": "Active (6–7 days/week)",
+      "VERY_ACTIVE": "Very active (intense daily)"
+    },
+    "errors": {
+      "invalidCredentials": "Invalid email or password",
+      "emailExists": "An account with this email already exists",
+      "passwordMismatch": "Passwords do not match",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "clients": "Clients",
+    "workouts": "Workout Programs",
+    "exercises": "Exercises",
+    "diet": "Diet Plans",
+    "ingredients": "Ingredients",
+    "messages": "Messages",
+    "manageClients": "Manage Clients",
+    "manageWorkouts": "Manage Workout Programs",
+    "manageDiet": "Manage Diet Plans",
+    "search": "Search...",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "assign": "Assign",
+    "save": "Save",
+    "cancel": "Cancel",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "goal": "Goal",
+    "actions": "Actions",
+    "noResults": "No results found",
+    "assignToClient": "Assign to Client",
+    "selectClient": "Select a client",
+    "assigned": "Assigned successfully",
+    "created": "Created successfully",
+    "updated": "Updated successfully",
+    "deleted": "Deleted successfully"
+  },
+  "client": {
+    "dashboard": "My Dashboard",
+    "myWorkouts": "My Workout Programs",
+    "myDiet": "My Diet Plans",
+    "messages": "Message Coach",
+    "welcome": "Welcome back",
+    "noWorkouts": "No workout programs assigned yet.",
+    "noDiet": "No diet plans assigned yet.",
+    "sendMessage": "Send Message",
+    "typeMessage": "Type your message...",
+    "sets": "sets",
+    "reps": "reps",
+    "rest": "rest",
+    "meal": "Meal"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "back": "Back",
+    "viewAll": "View all",
+    "description": "Description",
+    "muscleGroup": "Muscle Group",
+    "calories": "Calories",
+    "protein": "Protein",
+    "carbs": "Carbs",
+    "fat": "Fat",
+    "unit": "Unit",
+    "quantity": "Quantity"
+  },
+  "footer": {
+    "tagline": "Premium fitness coaching by Zou the Doctor",
+    "rights": "All rights reserved."
+  }
+}
